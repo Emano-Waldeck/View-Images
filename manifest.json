@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "name": "View Image for Google Images",
   "description": "Bring the 'View Image' button back to Google Images (for both desktop and mobile view)",
 
@@ -27,10 +27,19 @@
     "storage"
   ],
 
+  "homepage_url": "http://add0n.com/view-image.html",
+
   "content_scripts": [{
     "matches": ["*://*/*"],
     "run_at": "document_start",
     "include_globs": ["*://*.google.*/search*tbm=isch*"],
     "js": ["data/inject.js"]
-  }]
+  }],
+
+  "applications": {
+    "gecko": {
+      "id": "{e3a09cf7-751b-4739-9449-70e7ea23b800}",
+      "strict_min_version": "52.0"
+    }
+  }
 }
